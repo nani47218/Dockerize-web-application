@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    image: nginx:alpine
+    ports:
+      - "2000:80"
+    volumes:
+      - ./index.html:/usr/share/nginx/html/index.html
+      - ./style.css:/usr/share/nginx/html/style.css
+      - ./app.js:/usr/share/nginx/html/app.js
+    restart: always
